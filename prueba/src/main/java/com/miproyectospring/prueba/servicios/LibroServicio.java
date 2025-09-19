@@ -61,7 +61,6 @@ public class LibroServicio {
 
         if(respuesta.isPresent()){
             Libro libro = respuesta.get();
-            libro.setIsbn(isbn);
             libro.setTitulo(titulo);
             libro.setEjemplares(ejemplares);
 
