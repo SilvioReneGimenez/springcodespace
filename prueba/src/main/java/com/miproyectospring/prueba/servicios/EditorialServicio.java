@@ -2,6 +2,7 @@ package com.miproyectospring.prueba.servicios;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,14 @@ public class EditorialServicio {
         List<Editorial> editoriales = new ArrayList<>();
         editoriales = editorialRepositorio.findAll();
         return editoriales;
+    }
+    public void actualizarEditorial(String id, String nombre){
+        Optional<Editorial> respuesta = editorialRepositorio.findById(id);
+        if(respuesta.isPresent()){
+            Editorial editorial = respuesta.get();
+            editorial.setNombre(nombre);
+            editorialRepositorio.save(editorial);
+        }
+
     }
 }
