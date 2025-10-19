@@ -2,7 +2,6 @@ package com.miproyectospring.prueba.entidades;
 
 import java.util.Date;
 
-import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
